@@ -40,6 +40,7 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get("/games/new", "GameController@new");
         Route::post("/games/add", "GameController@add");
         Route::get('/gamesession/new', 'GameSessionController@addGameSessionForm');
+        Route::post('/gamesession/add', 'GameSessionController@addGameSession');
         Route::get('/gametourney/new', 'GameTournamentController@comingsoon');
         // Kerbal Space Program Route
         Route::get('/ksp', function () {

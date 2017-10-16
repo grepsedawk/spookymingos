@@ -11,7 +11,7 @@
 
             <div class="col-md-12">
 
-                <form action="#">
+                <form action="/gamesession/add" method="post">
                     {{ csrf_field() }}
 
                     <input type="hidden" name="game" value="1" id="formgame">
@@ -55,9 +55,24 @@
 
                     <h2>When is this going down?</h2>
 
-                    <p id="invite-text"></p>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input type="text" name="datetime" id="datetimepickr">
+                        </div>
+                        <div class="col-md-6">
+                            Your timezone:
+                            @php
+                                 $user = Auth::user(); echo $user->timezone;
+                            @endphp
+                        </div>
+                    </div>
 
-                    
+                    <hr>
+
+                    <h2>How long are you thinkin?</h2>
+
+                    <label for="length_in_hours">Hours:</label>
+                    <input id="length_in_hours" name="length_in_hours" type="number" placeholder="Ex: Enter 2.5 for 2hr 30m" step="0.5" length="200">
 
                     <hr>
 
@@ -160,6 +175,12 @@
         $(".userbutton-selected").each(function() {
             $(this).trigger("click");
         });
+    });
+
+
+    $("#datetimepickr").flatpickr({
+        enableTime: true,
+        altInput: true
     });
 
 </script>
