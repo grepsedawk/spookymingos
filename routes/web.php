@@ -10,8 +10,12 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::group(['middleware' => ['auth']], function () {
+    Route::get("/githubupdate", "GitHubController@update");
+});
 
 Auth::routes();
+
 Route::get('/battlenet/callback', function () {
     return json_encode(array(
         "status" => 200,
