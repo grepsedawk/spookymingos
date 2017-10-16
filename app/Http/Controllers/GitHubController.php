@@ -10,7 +10,7 @@ class GitHubController extends Controller
 {
     public function update() {
         $output = array();
-        $commands = ['git pull', 'composer install', 'php artisan migrate'];
+        $commands = ['pwd', 'whoami', 'git pull', 'composer install', 'php artisan migrate'];
         foreach($commands as $command) {
             $process = new Process($command);
             $process->run();
