@@ -9,11 +9,7 @@ use Symfony\Component\Process\Exception\ProcessFailedException;
 class GitHubController extends Controller
 {
     public function update() {
-
-        $process = new Process("whoami");
-        $process->run();
-        return $process->getOutput();
-
+        $output = array();
         $commands = ['git pull', 'composer install', 'php artisan migrate'];
         foreach($commands as $command) {
             $process = new Process($command);
@@ -23,9 +19,11 @@ class GitHubController extends Controller
                 // throw new ProcessFailedException($process);
                 $success = false;
             }
+            array_push($output, $process->getOutput());
         }
         return json_encode(array(
-            "success" => $success
+            "success" => $success,
+            "output" => $output
         ));
     }
 }
