@@ -11,7 +11,7 @@
 |
 */
 Route::group(['middleware' => ['auth']], function () {
-    Route::get("/githubupdate", "GitHubController@update");
+    Route::post("/githubupdate", "GitHubController@update");
 });
 
 Auth::routes();
