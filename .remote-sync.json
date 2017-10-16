@@ -1,0 +1,15 @@
+{
+  "uploadOnSave": true,
+  "useAtomicWrites": false,
+  "deleteLocal": true,
+  "hostname": "spookymingos.com",
+  "port": "22",
+  "target": "/var/www/spookymingos/",
+  "ignore": [
+    ".git/*"
+  ],
+  "username": "root",
+  "keyfile": "/Users/d4rkd0s/.ssh/id_rsa",
+  "watch": [],
+  "transport": "scp"
+}
