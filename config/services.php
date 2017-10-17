@@ -16,7 +16,7 @@ return [
 
     'mailgun' => [
         'domain' => 'mg.spookymingos.com',
-        'secret' => 'key-7ab0ed80ab3ad5af86c706adb4cf1638',
+        'secret' => env('MAILGUN_SECRET'),
     ],
 
     'stripe' => [
