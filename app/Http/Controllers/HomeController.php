@@ -8,8 +8,6 @@ use Discord\Discord;
 
 class HomeController extends Controller
 
-// Slack bot access token xoxb-235581167492-8qSe2tZnisDJSkm2IOoWdhXT
-
 {
     /**
      * Create a new controller instance.
